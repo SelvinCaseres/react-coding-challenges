@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import io from 'socket.io-client';
 import useSound from 'use-sound';
 import config from '../../../config';
@@ -23,8 +23,6 @@ function Messages() {
   const [message, setMessage ] = useState();
   const [messages, setMessages ] = useState([{message: initialBottyMessage, user: "bot", botTyping: false}]);
   const [botTyping, setBotTyping] = useState(false);
-
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
   const sendMessage = async () => {
     playSend();
